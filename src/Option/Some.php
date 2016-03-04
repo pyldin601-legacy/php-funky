@@ -43,7 +43,7 @@ class Some extends Option {
 
     function map($callable) {
         if (is_callable($callable)) {
-            return new static($callable($this->get()));
+            return new self($callable($this->get()));
         }
         elseif (is_array($callable)) {
             return isset($callable[$this->get()]) ? new self($callable[$this->get()]) : None::instance();
