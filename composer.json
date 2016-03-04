@@ -1,6 +1,8 @@
 {
-    "name": "pldin601/funky-libs",
+    "name": "pldin601/php-funky",
+    "version": "1.0.0",
     "description": "Functional Library for PHP",
+    "homepage": "https://github.com/pldin601/php-funky",
     "authors": [
         {
             "name": "Roman (pldin601)",

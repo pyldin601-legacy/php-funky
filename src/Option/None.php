@@ -8,8 +8,6 @@
 
 namespace Funky\Option;
 
-use Slang\Container\DI\Closure;
-
 
 /**
  * Class None
@@ -41,8 +39,7 @@ class None extends Option {
     }
 
     function getOrThrow($callable, ...$arguments) {
-        $exception = Closure::fromAny($callable)->call($arguments);
-        throw $exception;
+        throw call_user_func_array($callable, $arguments);
     }
 
     function orElse(Option $other) {
