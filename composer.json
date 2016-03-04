@@ -1,0 +1,21 @@
+{
+    "name": "pldin601/funky-libs",
+    "description": "Functional Library for PHP",
+    "authors": [
+        {
+            "name": "Roman (pldin601)",
+            "email": "roman@homefs.biz"
+        }
+    ],
+    "require": {
+        "php": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Funky\\": "src/"
+        },
+        "files": [
+            "src/helper.php"
+        ]
+    }
+}
