@@ -1,9 +1,13 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: Roman
- * Date: 12.02.2016
- * Time: 14:02
+ * Option is a type that represents encapsulation of an optional value.
+ *
+ * For more information @see README.md
+ *
+ * @link https://github.com/pldin601/php-funky
+ * @author Roman Gemini (pldin601), roman@homefs.biz
+ * @copyright 2016 Roman Gemini
  */
 
 namespace Funky\Option;
