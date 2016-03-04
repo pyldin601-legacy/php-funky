@@ -58,7 +58,7 @@ class Some extends Option {
         elseif (is_array($callable)) {
             return in_array($this->get(), $callable) ? $this : None::instance();
         }
-        throw new \InvalidArgumentException("Expected only callable or array types of argument.");
+        throw new \InvalidArgumentException("Expected only callable or array type of argument.");
     }
 
     function __toString() {
