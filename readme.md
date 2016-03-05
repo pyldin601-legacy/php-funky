@@ -9,8 +9,7 @@ It has two subclasses - Some and None. First encapsulates the original data and 
 
 Option has following methods:
 
-`Option::get()` - extracts encapsulated data from `Some` or throws `OptionException` if called on `None`.
-
+`Option::get() - extracts encapsulated data from Some or throws OptionException if called on None.`
 `Option::isEmpty()` - returns `FALSE` on `Some` and `TRUE` on `None`.
 
 `Option::nonEmpty()` - returns `TRUE` on `Some` and `FALSE` on `None`.
