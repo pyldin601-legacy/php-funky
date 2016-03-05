@@ -58,7 +58,7 @@ class UserService
 }
 ```
 
-In this case result of `find` method encapsulate into `Option` even if user not found. But it will be subclass `Some` if user fetched from database or subclass `None` if not. Second argument in helper function `wrap` tells what result means that no result. Default value is `null`.
+In this case result of `find` method encapsulating into `Option` even if user not found. But it will be subclass `Some` if user fetched from database or subclass `None` if not. Second argument in helper function `wrap` tells what result means that no result. Default value is `null`.
 
 And then our code will be like:
 
