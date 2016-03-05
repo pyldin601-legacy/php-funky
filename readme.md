@@ -39,7 +39,7 @@ if ($user === FALSE) {
 return view('userProfile.tmpl', compact('user'));
 ```
 
-We could use Option in our `UserService` class:
+We could use `Option` in our `UserService` class:
 
 ```php
 class UserService 
@@ -58,8 +58,7 @@ class UserService
 }
 ```
 
-In this case result of `find` method encapsulated into `Option` object even if user not found.
-But it will be `Some` if user fetched from database or `None` if not. Second argument in helper function `wrap` tells what result means that no result. Default value is `null`.
+In this case result of `find` method encapsulate into `Option` even if user not found. But it will be subclass `Some` if user fetched from database or subclass `None` if not. Second argument in helper function `wrap` tells what result means that no result. Default value is `null`.
 
 And then our code will be like:
 
