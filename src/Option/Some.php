@@ -48,7 +48,7 @@ class Some extends Option {
         elseif (is_array($callable)) {
             return isset($callable[$this->get()]) ? new self($callable[$this->get()]) : None::instance();
         }
-        throw new \InvalidArgumentException("Expected only callable or array types of argument.");
+        throw new \InvalidArgumentException("Expected only callable type of argument.");
     }
 
     function filter($callable) {

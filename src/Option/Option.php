@@ -74,7 +74,7 @@ abstract class Option {
      * @param null $reject
      * @return Option
      */
-    public static function pack($value, $reject = null) {
+    public static function wrap($value, $reject = null) {
         if ($value === $reject) {
             return None::instance();
         }

@@ -8,20 +8,13 @@ if (!function_exists('func')) {
      */
     function func($pattern)
     {
-        return \Funky\Lambda\Compiler::compile($pattern, true);
-    }
+        static $instance = null;
 
-}
+        if (is_null($instance)) {
+            $instance = new \Funky\Lambda\Lambda();
+        }
 
-if (!function_exists('sub')) {
-
-    /**
-     * @param $pattern
-     * @return Closure
-     */
-    function sub($pattern)
-    {
-        return \Funky\Lambda\Compiler::compile($pattern, false);
+        return $instance->make($pattern);
     }
 
 }
@@ -94,7 +87,7 @@ if (!function_exists('wrap')) {
      */
     function wrap($value, $reject = null)
     {
-        return \Funky\Option\Option::pack($value, $reject);
+        return \Funky\Option\Option::wrap($value, $reject);
     }
 
 }
