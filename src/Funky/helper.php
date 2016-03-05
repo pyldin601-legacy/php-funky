@@ -35,7 +35,7 @@ if (!function_exists('inst')) {
 
 }
 
-if (!function_exists('call')) {
+if (!function_exists('invoke')) {
 
     /**
      * Returns callback that invokes $method on the $class.
@@ -44,7 +44,7 @@ if (!function_exists('call')) {
      * @param ...$arguments
      * @return Closure
      */
-    function call($method, ...$arguments)
+    function invoke($method, ...$arguments)
     {
         return function ($class) use ($method, $arguments) {
             return call_user_func_array([$class, $method], $arguments);

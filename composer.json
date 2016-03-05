@@ -1,11 +1,15 @@
 {
     "name": "pldin601/php-funky",
+    "type": "library",
+    "version": "1.0",
     "description": "Functional Library for PHP",
+    "keywords": ["option", "lambda", "functional"],
     "homepage": "https://github.com/pldin601/php-funky",
     "authors": [
         {
             "name": "Roman Gemini (pldin601)",
-            "email": "roman_gemini@ukr.net"
+            "email": "roman_gemini@ukr.net",
+            "role": "Developer"
         }
     ],
     "require": {
@@ -15,15 +19,14 @@
         "phpunit/phpunit": "^5.2"
     },
     "autoload": {
-        "psr-4": {
-            "Funky\\": "src/"
-        },
-        "files": [
-            "src/helper.php"
-        ]
+        "psr-4": {"Funky\\": "src/Funky/"},
+        "files": ["src/Funky/helper.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {"Funky\\": "tests/Funky/"}
     },
     "scripts": {
-        "test": ["phpunit tests/OptionTest.php"]
+        "test": "phpunit"
     },
     "extra": {
         "branch-alias": {
