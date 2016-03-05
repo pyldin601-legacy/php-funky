@@ -33,7 +33,7 @@ class Some extends Option {
         return $this->get();
     }
 
-    function getOrThrow($callable, ...$arguments) {
+    function getOrThrow($exceptionClass, ...$arguments) {
         return $this->get();
     }
 

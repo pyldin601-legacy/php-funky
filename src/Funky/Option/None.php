@@ -38,8 +38,8 @@ class None extends Option {
         return $else;
     }
 
-    function getOrThrow($callable, ...$arguments) {
-        throw call_user_func_array($callable, $arguments);
+    function getOrThrow($exceptionClass, ...$arguments) {
+        throw new $exceptionClass(...$arguments);
     }
 
     function orElse(Option $other) {

@@ -34,7 +34,7 @@ abstract class Option {
      */
     function nonEmpty() {
 
-        return ! $this->isEmpty();
+        return !$this->isEmpty();
 
     }
 
@@ -45,11 +45,11 @@ abstract class Option {
     abstract function getOrElse($else);
 
     /**
-     * @param callable $callable
+     * @param callable $exceptionClass
      * @param $arguments
      * @return mixed
      */
-    abstract function getOrThrow($callable, ...$arguments);
+    abstract function getOrThrow($exceptionClass, ...$arguments);
 
     /**
      * @param Option $other
