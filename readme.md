@@ -10,8 +10,8 @@ It has two subclasses - Some and None. First encapsulates the original data and 
 Option has following methods:
 
 `Option::get()` - extracts encapsulated data from `Some` or throws `OptionException` if called on `None`.
-`Option::isEmpty()` - returns FALSE on `Some` and TRUE on `None`.
-`Option::nonEmpty()` - returns TRUE on `Some` and FALSE on `None`.
+`Option::isEmpty()` - returns `FALSE` on `Some` and `TRUE` on `None`.
+`Option::nonEmpty()` - returns `TRUE` on `Some` and `FALSE` on `None`.
 `Option::getOrElse($else)` - returns encapsulated data if called on `Some` or returns `$else` in case of `None`.
 `Option::getOrThrow($exceptionClass, ...$arguments)` - returns encapsulated data if called on `Some` or throws exception if called on `None`.
 `Option::orElse(Option $other)` - if called on `Some` - returns self or `$other` if called on `None`.
