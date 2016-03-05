@@ -68,4 +68,4 @@ $user = $userService->find(10)->getOrThrow(UserNotFoundException::class);
 return view('userProfile.tmpl', compact('user'));
 ```
 
-We do not need to interpret result of `find` method. We know that it always will be Option value: `Some` if data present or `None` if not.
+We do not need to interpret result of `find` method. We know that it always return `Some` if data present or `None` if not.
