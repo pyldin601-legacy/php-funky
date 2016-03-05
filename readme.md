@@ -26,7 +26,7 @@ class UserService
 }
 ```
 
-Depending on the `PDO` documentation, method `fetch` fetches the row from a result set or returns `FALSE` on failure or empty result set. 
+Depending on the `PDO` documentation, method `fetch` in our case fetches the row from a result set or returns `FALSE` on empty result set. 
 It means that we must check result of `find` method and keep in mind that result `FALSE` means that user with the specified `$id` not found:
 
 ```php
