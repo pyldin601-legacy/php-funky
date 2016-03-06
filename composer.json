@@ -1,7 +1,6 @@
 {
     "name": "pldin601/php-funky",
     "type": "library",
-    "version": "1.0",
     "description": "Functional Library for PHP",
     "keywords": ["option", "lambda", "functional"],
     "homepage": "https://github.com/pldin601/php-funky",
