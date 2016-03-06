@@ -10,9 +10,8 @@ It has two subclasses - Some and None. First encapsulates the original data and 
 ## Lambda
 Lambda is a tool which helps you to make short callback functions for using, for example, in map, filter, sort or reduce as the callback functions.
 
-Example:
+Example 1. Will return sum of numbers from 1 up to 5:
 
 ```php
-$sum = array_reduce(range(1, 5), func("$ + $"), 0)
-// $sum = 15
+$sum = array_reduce(range(1, 5), func("$ + $"), 0);
 ```
