@@ -72,6 +72,12 @@ class LambdaTest extends Misc\TestCase
         $this->assertException(function () { func(false); }, Lambda\LambdaException::class);
     }
 
+    public function testReduce()
+    {
+        $sum = array_reduce(range(1, 5), func("$ + $"), 0);
+        $this->assertEquals(15, $sum);
+    }
+
     public function someMethod()
     {
         return 'CALLED';
