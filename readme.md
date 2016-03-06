@@ -13,5 +13,6 @@ Lambda is a tool which helps you to make short callback functions for using, for
 Example:
 
 ```php
-array_reduce(range(1, 5), func("$ + $"), 0)
+$sum = array_reduce(range(1, 5), func("$ + $"), 0)
+// $sum = 15
 ```
