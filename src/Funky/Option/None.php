@@ -19,43 +19,56 @@ class None extends Option {
 
     private function __construct() { }
 
-    public static function instance() {
+    public static function instance()
+    {
         if (is_null(self::$instance)) {
             self::$instance = new self();
         }
         return self::$instance;
     }
 
-    function get() {
+    function get()
+    {
         throw new OptionException("Object is empty.");
     }
 
-    function isEmpty() {
+    function isEmpty()
+    {
         return true;
     }
 
-    function getOrElse($else) {
+    function getOrElse($else)
+    {
         return $else;
     }
 
-    function getOrThrow($exceptionClass, ...$arguments) {
+    function getOrThrow($exceptionClass, ...$arguments)
+    {
         throw new $exceptionClass(...$arguments);
     }
 
-    function orElse(Option $other) {
+    function orElse(Option $other)
+    {
         return $other;
     }
 
-    function map($callable) {
+    function map($callable)
+    {
         return $this;
     }
 
-    function filter($callable) {
+    function flatMap($callable)
+    {
         return $this;
     }
 
-    function __toString() {
+    function filter($callable)
+    {
+        return $this;
+    }
+
+    function __toString()
+    {
         return "None";
     }
-
 }

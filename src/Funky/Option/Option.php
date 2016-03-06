@@ -64,6 +64,12 @@ abstract class Option {
     abstract function map($callable);
 
     /**
+     * @param $callable
+     * @return Option
+     */
+    abstract function flatMap($callable);
+
+    /**
      * @param callable|array $callable
      * @return Option
      */
