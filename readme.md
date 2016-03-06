@@ -1,7 +1,7 @@
 # php-funky
 Functional Library for PHP.
 
-Consist of two classes - Option and Lambda.
+Consist of two parts - Option and Lambda.
 
 ## Option
 Option is an object that represents encapsulation of an optional value. It can be used as the return value of functions which may or may not return a meaningful value when they are applied.
