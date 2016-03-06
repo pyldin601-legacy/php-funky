@@ -9,6 +9,6 @@
 namespace Funky\Lambda;
 
 
-class CompilerException extends \Exception {
+class LambdaException extends \Exception {
     //
 }

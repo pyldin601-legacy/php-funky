@@ -42,12 +42,12 @@ class Lambda {
      * Checks whether $pattern is valid.
      *
      * @param $pattern
-     * @throws CompilerException
+     * @throws LambdaException
      */
     private function checkPattern($pattern)
     {
         if (! is_string($pattern)) {
-            throw new CompilerException("Pattern expected to be a string");
+            throw new LambdaException("Pattern expected to be a string");
         }
     }
 

@@ -67,9 +67,9 @@ class LambdaTest extends Misc\TestCase
 
     public function testWrongTypeOfData()
     {
-        $this->assertException(function () { func(null); }, Lambda\CompilerException::class);
-        $this->assertException(function () { func(array()); }, Lambda\CompilerException::class);
-        $this->assertException(function () { func(false); }, Lambda\CompilerException::class);
+        $this->assertException(function () { func(null); }, Lambda\LambdaException::class);
+        $this->assertException(function () { func(array()); }, Lambda\LambdaException::class);
+        $this->assertException(function () { func(false); }, Lambda\LambdaException::class);
     }
 
     public function someMethod()
