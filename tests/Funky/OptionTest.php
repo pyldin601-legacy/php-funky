@@ -3,7 +3,7 @@
 namespace Funky;
 
 
-class OptionTest extends \PHPUnit_Framework_TestCase
+class OptionTest extends Misc\TestCase
 {
     private $initialValue = 'foo';
     private $alternativeValue = 'bar';
@@ -62,13 +62,4 @@ class OptionTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf(Option\Some::class, Option\Option::wrap($this->initialValue));
     }
 
-
-    private function assertException($callable, $expectedException = \Exception::class)
-    {
-        try {
-            $callable();
-        } catch (\Exception $exception) {
-            $this->assertInstanceOf($expectedException, $exception);
-        }
-    }
 }

@@ -9,7 +9,7 @@
 namespace Funky;
 
 
-class LambdaTest extends \PHPUnit_Framework_TestCase
+class LambdaTest extends Misc\TestCase
 {
     public $attr = 'foo';
 
@@ -56,6 +56,20 @@ class LambdaTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('foo', $closure1($array));
         $this->assertEquals('bar', $closure2($array));
+    }
+
+    public function testUnindexedVariables()
+    {
+        $closure = func("$ + $");
+
+        $this->assertEquals(5, $closure(2, 3));
+    }
+
+    public function testWrongTypeOfData()
+    {
+        $this->assertException(function () { func(null); }, Lambda\CompilerException::class);
+        $this->assertException(function () { func(array()); }, Lambda\CompilerException::class);
+        $this->assertException(function () { func(false); }, Lambda\CompilerException::class);
     }
 
     public function someMethod()
