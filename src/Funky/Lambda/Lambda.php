@@ -58,7 +58,7 @@ class Lambda {
         for ($i = 0; $i < $count; $i ++) {
             $arguments[] = sprintf('$arg%d', ($i + 1));
         }
-        return implode(',', $arguments);
+        return implode(', ', $arguments);
     }
 
     /**
@@ -81,20 +81,5 @@ class Lambda {
     private function getPatternHash($pattern)
     {
         return md5(serialize($pattern));
-    }
-
-    /**
-     * @param $pattern
-     * @return int|mixed
-     */
-    private function detectNumberOfArguments($pattern)
-    {
-        preg_match_all('~\$(\d+)~', $pattern, $result, PREG_PATTERN_ORDER);
-        $result = $result[1];
-        rsort($result, SORT_NUMERIC);
-        if (count($result) == 0) {
-            return 0;
-        }
-        return (int) array_shift($result);
     }
 }
