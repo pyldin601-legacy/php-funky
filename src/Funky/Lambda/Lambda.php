@@ -6,9 +6,7 @@ namespace Funky\Lambda;
 
 class Lambda {
 
-    const VARIABLE_PATTERN = '[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*';
-    const ARGUMENT_TEMPLATE = '~(\$)(\d+)~';
-    const ARGUMENT1_TEMPLATE = '~(\$)~';
+    const ARGUMENT_PATTERN = '~(\$)(\d*?)(?![a-zA-Z0-9_\x7f-\xff])~';
 
     private $compiledCache = [];
 
@@ -23,19 +21,44 @@ class Lambda {
 
         if (empty($this->compiledCache[$hash])) {
 
-            $pattern = preg_replace(self::ARGUMENT_TEMPLATE, 'func_get_arg($2 - 1)', $pattern);
+            $totalArguments = 0;
 
-            $index = 0;
+            $pattern = preg_replace_callback(self::ARGUMENT_PATTERN, function ($match) use (&$totalArguments)
+            {
+                if (!empty($match[2])) {
+                    $id = $match[2];
+                    $totalArguments = max($totalArguments, $id);
+                } else {
+                    $id = ++ $totalArguments;
+                }
 
-            $pattern = preg_replace_callback(self::ARGUMENT1_TEMPLATE, function () use (&$index) {
-                $result = "func_get_arg($index)"; $index ++; return $result;
+                return sprintf('$arg%d', $id);
+
             }, $pattern);
 
-            $build = create_function("", "return $pattern;");
+            $function = create_function(
+                $this->generateArguments($totalArguments),
+                "return $pattern;"
+            );
 
-            $this->compiledCache[$hash] = $build;
+            $this->compiledCache[$hash] = $function;
+
         }
+
         return $this->compiledCache[$hash];
+    }
+
+    /**
+     * @param $count
+     * @return string
+     */
+    private function generateArguments($count)
+    {
+        $arguments = [];
+        for ($i = 0; $i < $count; $i ++) {
+            $arguments[] = sprintf('$arg%d', ($i + 1));
+        }
+        return implode(',', $arguments);
     }
 
     /**
