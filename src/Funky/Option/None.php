@@ -76,4 +76,8 @@ class None extends Option {
     {
         return "None";
     }
+
+    public function equals($var) {
+        return $var instanceof None;
+    }
 }

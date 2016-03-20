@@ -88,4 +88,8 @@ class Some extends Option {
         return "Some(".$this->get().")";
     }
 
+    public function equals($var)
+    {
+        return $var === $this->get();
+    }
 }

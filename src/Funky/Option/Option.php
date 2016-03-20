@@ -92,4 +92,5 @@ abstract class Option {
         return new Some($value);
     }
 
+    abstract public function equals($var);
 }
