@@ -47,6 +47,11 @@ class None extends Option {
         throw new $exceptionClass(...$arguments);
     }
 
+    function getOrCall($callable)
+    {
+        return $callable();
+    }
+
     function orElse(Option $other)
     {
         return $other;

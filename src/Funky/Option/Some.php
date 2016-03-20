@@ -42,6 +42,11 @@ class Some extends Option {
         return $this->get();
     }
 
+    function getOrCall($callable)
+    {
+        return $this->get();
+    }
+
     function orElse(Option $other)
     {
         return $this;

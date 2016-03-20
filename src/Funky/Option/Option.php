@@ -32,10 +32,9 @@ abstract class Option {
     /**
      * @return bool
      */
-    function nonEmpty() {
-
+    function nonEmpty()
+    {
         return !$this->isEmpty();
-
     }
 
     /**
@@ -43,6 +42,12 @@ abstract class Option {
      * @return mixed
      */
     abstract function getOrElse($else);
+
+    /**
+     * @param $callable
+     * @return mixed
+     */
+    abstract function getOrCall($callable);
 
     /**
      * @param callable $exceptionClass
